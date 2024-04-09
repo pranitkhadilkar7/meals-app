@@ -22,10 +22,17 @@ export const MealsOverviewScreen = memo(function MealsOverviewScreen({
     <View style={styles.container}>
       <FlatList
         data={meals}
-        renderItem={(itemData) => <MealItem title={itemData.item.title} />}
+        renderItem={(itemData) => (
+          <MealItem
+            title={itemData.item.title}
+            imageUrl={itemData.item.imageUrl}
+            duration={itemData.item.duration}
+            complexity={itemData.item.complexity}
+            affordability={itemData.item.affordability}
+          />
+        )}
         keyExtractor={(item) => item.id}
       />
-      {/* <Text>Welcome to Meals Overview Screen. {route.params.categoryId}</Text> */}
     </View>
   )
 })
