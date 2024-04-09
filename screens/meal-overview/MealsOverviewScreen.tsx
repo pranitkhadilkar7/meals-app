@@ -1,7 +1,7 @@
 import { FlatList, StyleSheet, Text, View } from 'react-native'
 import type { NativeStackScreenProps } from '@react-navigation/native-stack'
 import { RootStackParamList } from '../../routes/route-type'
-import { memo, useLayoutEffect, useMemo } from 'react'
+import { memo, useCallback, useLayoutEffect, useMemo } from 'react'
 import { CATEGORIES, MEALS } from '../../data/dummy-data'
 import { MealItem } from './MealItem'
 
@@ -19,6 +19,10 @@ export const MealsOverviewScreen = memo(function MealsOverviewScreen({
     []
   )
 
+  const mealSelectHandler = useCallback((mealId: string) => {
+    navigation.navigate('MealDetailsScreen', { mealId })
+  }, [])
+
   useLayoutEffect(() => {
     const category = CATEGORIES.find((category) => category.id === categoryId)
     navigation.setOptions({ title: category?.title ?? '' })
@@ -35,6 +39,7 @@ export const MealsOverviewScreen = memo(function MealsOverviewScreen({
             duration={itemData.item.duration}
             complexity={itemData.item.complexity}
             affordability={itemData.item.affordability}
+            onPress={mealSelectHandler.bind({}, itemData.item.id)}
           />
         )}
         keyExtractor={(item) => item.id}

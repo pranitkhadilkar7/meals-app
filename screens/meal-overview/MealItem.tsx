@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native'
 import { memo } from 'react'
 import {
   Image,
@@ -14,6 +15,7 @@ type Props = {
   duration: number
   complexity: string
   affordability: string
+  onPress: () => void
 }
 
 export const MealItem = memo(function MealItem({
@@ -22,11 +24,12 @@ export const MealItem = memo(function MealItem({
   duration,
   complexity,
   affordability,
+  onPress,
 }: Props) {
   return (
     <View style={styles.mealItemContainer}>
       <Pressable
-        onPress={() => {}}
+        onPress={onPress}
         android_ripple={{ color: '#ccc' }}
         style={({ pressed }) => [pressed ? styles.buttonPressed : null]}
       >
