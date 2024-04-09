@@ -8,13 +8,28 @@ import { RootStack } from './routes/route-config'
 export default function App() {
   return (
     <>
-      <StatusBar style="dark" />
+      <StatusBar style="light" />
       <NavigationContainer>
-        <RootStack.Navigator>
+        <RootStack.Navigator
+          screenOptions={{
+            headerStyle: { backgroundColor: '#351401' },
+            headerTintColor: 'white',
+            contentStyle: {
+              backgroundColor: '#3f2f25',
+            },
+          }}
+        >
           <RootStack.Screen
             name="MealsCategories"
             component={CategoriesScreen}
-            options={{ title: 'Meals Categories' }}
+            options={{
+              title: 'All Categories',
+              // headerStyle: { backgroundColor: '#351401' },
+              // headerTintColor: 'white',
+              // contentStyle: {
+              //   backgroundColor: '#3f2f25',
+              // },
+            }}
           />
           <RootStack.Screen
             name="MealsOverview"
