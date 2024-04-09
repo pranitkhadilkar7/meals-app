@@ -15,7 +15,9 @@ export function CategoriesScreen({ navigation }: Props) {
           title={itemData.item.title}
           color={itemData.item.color}
           onPress={() => {
-            navigation.navigate('MealsOverview')
+            navigation.navigate('MealsOverview', {
+              categoryId: itemData.item.id,
+            })
           }}
         />
       )}

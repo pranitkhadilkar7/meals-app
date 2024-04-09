@@ -8,7 +8,7 @@ import { RootStack } from './routes/route-config'
 export default function App() {
   return (
     <>
-      <StatusBar style="light" />
+      <StatusBar style="dark" />
       <NavigationContainer>
         <RootStack.Navigator>
           <RootStack.Screen
@@ -19,7 +19,7 @@ export default function App() {
           <RootStack.Screen
             name="MealsOverview"
             component={MealsOverviewScreen}
-            options={{ title: 'Meals Overview' }}
+            options={{ title: 'Meals Overview', headerBackTitle: 'Back' }}
           />
         </RootStack.Navigator>
       </NavigationContainer>
