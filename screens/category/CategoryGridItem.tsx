@@ -1,15 +1,21 @@
+import { memo } from 'react'
 import { Pressable, StyleSheet, Text, View, Platform } from 'react-native'
 
 type Props = {
   title: string
   color: string
+  onPress: () => void
 }
 
-export function CategoryGridItem({ title, color }: Props) {
+export const CategoryGridItem = memo(function CategoryGridItem({
+  title,
+  color,
+  onPress,
+}: Props) {
   return (
     <View style={[styles.gridItem]}>
       <Pressable
-        onPress={() => {}}
+        onPress={onPress}
         android_ripple={{ color: '#ccc' }}
         style={({ pressed }) => [
           styles.button,
@@ -22,7 +28,7 @@ export function CategoryGridItem({ title, color }: Props) {
       </Pressable>
     </View>
   )
-}
+})
 
 const styles = StyleSheet.create({
   gridItem: {
