@@ -34,7 +34,7 @@ export default function App() {
           <RootStack.Screen
             name="MealsOverview"
             component={MealsOverviewScreen}
-            options={{ title: 'Meals Overview', headerBackTitle: 'Back' }}
+            options={{ headerBackTitle: 'Back' }}
           />
         </RootStack.Navigator>
       </NavigationContainer>

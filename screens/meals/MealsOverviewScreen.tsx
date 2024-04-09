@@ -1,22 +1,28 @@
 import { FlatList, StyleSheet, Text, View } from 'react-native'
 import type { NativeStackScreenProps } from '@react-navigation/native-stack'
 import { RootStackParamList } from '../../routes/route-type'
-import { memo, useMemo } from 'react'
-import { MEALS } from '../../data/dummy-data'
+import { memo, useLayoutEffect, useMemo } from 'react'
+import { CATEGORIES, MEALS } from '../../data/dummy-data'
 import { MealItem } from './MealItem'
 
 type Props = NativeStackScreenProps<RootStackParamList, 'MealsOverview'>
 
 export const MealsOverviewScreen = memo(function MealsOverviewScreen({
   route,
+  navigation,
 }: Props) {
+  const categoryId = useMemo(() => {
+    return route.params.categoryId
+  }, [])
   const meals = useMemo(
-    () =>
-      MEALS.filter((meal) =>
-        meal.categoryIds.includes(route.params.categoryId)
-      ),
+    () => MEALS.filter((meal) => meal.categoryIds.includes(categoryId)),
     []
   )
+
+  useLayoutEffect(() => {
+    const category = CATEGORIES.find((category) => category.id === categoryId)
+    navigation.setOptions({ title: category?.title ?? '' })
+  }, [categoryId, navigation])
 
   return (
     <View style={styles.container}>
