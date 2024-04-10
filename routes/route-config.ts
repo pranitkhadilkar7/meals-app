@@ -1,4 +1,7 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import { RootStackParamList } from './route-type'
+import { RootNavigationParamList } from './route-type'
+import { createDrawerNavigator } from '@react-navigation/drawer'
 
-export const RootStack = createNativeStackNavigator<RootStackParamList>()
+export const RootStack = createNativeStackNavigator<RootNavigationParamList>()
+
+export const RootDrawer = createDrawerNavigator<RootNavigationParamList>()

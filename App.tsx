@@ -1,44 +1,19 @@
+import 'react-native-gesture-handler'
 import { StatusBar } from 'expo-status-bar'
 import { StyleSheet, Text, View } from 'react-native'
 import { CategoriesScreen } from './screens/category/CategoriesScreen'
 import { NavigationContainer } from '@react-navigation/native'
 import { MealsOverviewScreen } from './screens/meal-overview/MealsOverviewScreen'
-import { RootStack } from './routes/route-config'
+import { RootDrawer, RootStack } from './routes/route-config'
 import { MealDetailsScreen } from './screens/meal-details/MealDetailsScreen'
+import { FavouriteMealsScreen } from './screens/favourites/FavouriteMealsScreen'
+import { Routes } from './routes/Routes'
 
 export default function App() {
   return (
     <>
       <StatusBar style="light" />
-      <NavigationContainer>
-        <RootStack.Navigator
-          screenOptions={{
-            headerStyle: { backgroundColor: '#351401' },
-            headerTintColor: 'white',
-            contentStyle: {
-              backgroundColor: '#3f2f25',
-            },
-          }}
-        >
-          <RootStack.Screen
-            name="MealsCategories"
-            component={CategoriesScreen}
-            options={{
-              title: 'All Categories',
-            }}
-          />
-          <RootStack.Screen
-            name="MealsOverview"
-            component={MealsOverviewScreen}
-            options={{ headerBackTitle: 'Back' }}
-          />
-          <RootStack.Screen
-            name="MealDetailsScreen"
-            component={MealDetailsScreen}
-            options={{ title: 'Meal' }}
-          />
-        </RootStack.Navigator>
-      </NavigationContainer>
+      <Routes />
     </>
   )
 }

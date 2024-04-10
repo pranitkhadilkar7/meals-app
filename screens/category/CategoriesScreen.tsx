@@ -1,10 +1,10 @@
 import { FlatList, Text, View } from 'react-native'
 import { CATEGORIES } from '../../data/dummy-data'
 import { CategoryGridItem } from './CategoryGridItem'
-import type { NativeStackScreenProps } from '@react-navigation/native-stack'
-import { RootStackParamList } from '../../routes/route-type'
+import type { DrawerScreenProps } from '@react-navigation/drawer'
+import { RootNavigationParamList } from '../../routes/route-type'
 
-type Props = NativeStackScreenProps<RootStackParamList, 'MealsCategories'>
+type Props = DrawerScreenProps<RootNavigationParamList, 'MealCategories'>
 
 export function CategoriesScreen({ navigation }: Props) {
   return (

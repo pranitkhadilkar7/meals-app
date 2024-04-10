@@ -1,11 +1,18 @@
 export type RootStackParamList = {
-  MealsCategories: undefined
+  HomeRoutes: undefined
   MealsOverview: { categoryId: string }
   MealDetailsScreen: { mealId: string }
 }
 
+export type RootDrawerParamList = {
+  MealCategories: undefined
+  FavouriteMeals: undefined
+}
+
+export type RootNavigationParamList = RootStackParamList & RootDrawerParamList
+
 declare global {
   namespace ReactNavigation {
-    interface RootParamList extends RootStackParamList {}
+    interface RootParamList extends RootNavigationParamList {}
   }
 }
