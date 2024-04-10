@@ -1,19 +1,17 @@
 import 'react-native-gesture-handler'
 import { StatusBar } from 'expo-status-bar'
-import { StyleSheet, Text, View } from 'react-native'
-import { CategoriesScreen } from './screens/category/CategoriesScreen'
-import { NavigationContainer } from '@react-navigation/native'
-import { MealsOverviewScreen } from './screens/meal-overview/MealsOverviewScreen'
-import { RootDrawer, RootStack } from './routes/route-config'
-import { MealDetailsScreen } from './screens/meal-details/MealDetailsScreen'
-import { FavouriteMealsScreen } from './screens/favourites/FavouriteMealsScreen'
+import { StyleSheet } from 'react-native'
 import { Routes } from './routes/Routes'
+import { Provider } from 'react-redux'
+import { store } from './store/store'
 
 export default function App() {
   return (
     <>
       <StatusBar style="light" />
-      <Routes />
+      <Provider store={store}>
+        <Routes />
+      </Provider>
     </>
   )
 }
