@@ -25,11 +25,6 @@ export default function App() {
             component={CategoriesScreen}
             options={{
               title: 'All Categories',
-              // headerStyle: { backgroundColor: '#351401' },
-              // headerTintColor: 'white',
-              // contentStyle: {
-              //   backgroundColor: '#3f2f25',
-              // },
             }}
           />
           <RootStack.Screen

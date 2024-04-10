@@ -1,18 +1,35 @@
 import { NativeStackScreenProps } from '@react-navigation/native-stack'
-import { memo, useMemo } from 'react'
+import { memo, useLayoutEffect, useMemo } from 'react'
 import { Image, ScrollView, StyleSheet, Text, View } from 'react-native'
 import { RootStackParamList } from '../../routes/route-type'
 import { MEALS } from '../../data/dummy-data'
 import { List } from './List'
+import { FontAwesome } from '@expo/vector-icons'
 
 type Props = NativeStackScreenProps<RootStackParamList, 'MealDetailsScreen'>
 
 export const MealDetailsScreen = memo(function MealDetailsScreen({
   route,
+  navigation,
 }: Props) {
   const selectedMeal = useMemo(() => {
     return MEALS.find((meal) => meal.id === route.params.mealId)
   }, [route.params.mealId])
+
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      headerRight: () => (
+        <FontAwesome
+          name="star"
+          size={22}
+          color="#e3bba2"
+          onPress={() => {
+            console.log('Star icon pressed')
+          }}
+        />
+      ),
+    })
+  }, [navigation])
 
   return (
     <ScrollView style={styles.root}>
