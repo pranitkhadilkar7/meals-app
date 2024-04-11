@@ -1,13 +1,11 @@
-import { NativeStackScreenProps } from '@react-navigation/native-stack'
 import { CategoriesScreen } from '../screens/category/CategoriesScreen'
 import { FavouriteMealsScreen } from '../screens/favourites/FavouriteMealsScreen'
 import { RootDrawer } from './route-config'
-import { RootStackParamList } from './route-type'
 import { FontAwesome } from '@expo/vector-icons'
 
-type Props = NativeStackScreenProps<RootStackParamList, 'HomeRoutes'>
+// type Props = NativeStackScreenProps<RootStackParamList, 'HomeRoutes'>
 
-export function HomeRoutes({}: Props) {
+export function HomeRoutes() {
   return (
     <RootDrawer.Navigator
       screenOptions={{

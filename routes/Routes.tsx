@@ -1,6 +1,5 @@
 import { NavigationContainer } from '@react-navigation/native'
-import { RootDrawer, RootStack } from './route-config'
-import { CategoriesScreen } from '../screens/category/CategoriesScreen'
+import { RootStack } from './route-config'
 import { MealsOverviewScreen } from '../screens/meal-overview/MealsOverviewScreen'
 import { MealDetailsScreen } from '../screens/meal-details/MealDetailsScreen'
 import { HomeRoutes } from './HomeRoutes'

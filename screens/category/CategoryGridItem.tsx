@@ -13,7 +13,7 @@ export const CategoryGridItem = memo(function CategoryGridItem({
   onPress,
 }: Props) {
   return (
-    <View style={[styles.gridItem]}>
+    <View style={styles.gridItem}>
       <Pressable
         onPress={onPress}
         android_ripple={{ color: '#ccc' }}

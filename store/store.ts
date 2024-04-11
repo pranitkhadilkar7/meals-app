@@ -1,5 +1,4 @@
 import { configureStore } from '@reduxjs/toolkit'
-import { useDispatch, useSelector } from 'react-redux'
 import { favouriteReducer } from '../screens/favourites/favourite-slice'
 
 export const store = configureStore({

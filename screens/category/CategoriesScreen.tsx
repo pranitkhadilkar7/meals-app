@@ -1,4 +1,4 @@
-import { FlatList, Text, View } from 'react-native'
+import { FlatList } from 'react-native'
 import { CATEGORIES } from '../../data/dummy-data'
 import { CategoryGridItem } from './CategoryGridItem'
 import type { DrawerScreenProps } from '@react-navigation/drawer'

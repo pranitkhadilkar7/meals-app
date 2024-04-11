@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-namespace */
 export type RootStackParamList = {
   HomeRoutes: undefined
   MealsOverview: { categoryId: string }
